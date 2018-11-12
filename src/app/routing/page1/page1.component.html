@@ -1,0 +1,31 @@
+<a routerLink="/routing/2">next</a>
+
+<p>
+  page1 works!
+  <button (click)="toggleState()">toggleState</button>
+</p>
+
+<button (click)='showElement = true'>show</button>
+<!-- <div [@stateAnimation]="state" *ngIf='true'>
+  animate me
+</div> -->
+
+<div class="boxes">
+  <!-- <div *ngFor="let item of 10|times" class="box">box</div> -->
+</div>
+
+<button (click)='showAll=!showAll'>show</button>
+<div @boxAddRemoveAnimation class="box"></div>
+<div @boxAddRemoveAnimation class="box" *ngIf='showAll'></div>
+<div @boxAddRemoveAnimation class="box"></div>
+<div @boxAddRemoveAnimation class="box" *ngIf='showAll'></div>
+<div @boxAddRemoveAnimation class="box"></div>
+<div @boxAddRemoveAnimation class="box" *ngIf='showAll'></div>
+<div @boxAddRemoveAnimation class="box"></div>
+
+<button (click)='boxCounter = boxCounter + 1 '>add</button>
+<div [@boxCounter]="boxCounter" (@boxCounter.start)='animationStarted(event)'>
+    <div *ngFor="let items of boxes" class="box"></div>
+</div>
+
+<div *ngFor="let items of boxes" class="box2" @keyframeTest>xxo</div>
